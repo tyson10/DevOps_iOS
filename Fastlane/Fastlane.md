@@ -139,6 +139,7 @@ Please enter the 6 digit code:
             ```
             
 - 💥 pilot
+    - `pilot`명령어는 `upload_to_testflight`의 별칭이므로 `upload_to_testflight`를 사용할 필요가 없음.
     - invalid curve name
         - App Store Connect API Key를 등록했는데도 에러가 발생함
         
