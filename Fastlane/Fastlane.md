@@ -159,6 +159,25 @@ Please enter the 6 digit code:
               "in_house": false # optional but may be required if using match/sigh
             }
             ```
+
+    - No ipa or pkg file given
+        - 빌드를 안하고 pilot 실행해서 벌어지는 문제..
+        - 빌드부터 해야됨. 순서가 있음.
+    
+        ```bash
+        default_platform(:ios)
+        
+        platform :ios do
+          desc "Push a new beta build to TestFlight"
+          lane :myapp_cicd_test do
+            build_app(scheme: "MyApp_Debug", xcargs: "-allowProvisioningUpdates")
+        
+            pilot( api_key_path: "fastlane/3GHVD43H9X.json" )
+            
+            upload_to_testflight
+          end
+        end
+        ```
             
 
 ### Testfligt 배포 완료
