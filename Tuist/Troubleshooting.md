@@ -12,7 +12,7 @@
 
 ### 🚨 Errors
 
-- Unable to load manifest at **/Users/taeyoungson/Desktop/SpeechCard/Project.swift**
+- **`Unable to load manifest at /Users/taeyoungson/Desktop/SpeechCard/Project.swift`**
     
     ```xml
     ├── Plugins
@@ -76,7 +76,7 @@
     )
     ```
     
-- The target SpeechCardApp has the following invalid resource globs: "/Users/taeyoungson/Desktop/SpeechCard/SpeechCardApp/Resources/**" does not exist.
+- **`The target SpeechCardApp has the following invalid resource globs: "/Users/taeyoungson/Desktop/SpeechCard/SpeechCardApp/Resources/**" does not exist.`**
     - Resources 디렉토리가 없다는 뜻!
     - 각 프로젝트는 프로젝트의 타겟에서 설정했던 sources 및 resources 경로를 준수하도록 파일 트리를 구성해야 함.
     
@@ -138,7 +138,7 @@
 
 ### ⚠️ Warnings
 
-- Target 'CombineSchedulers' has been linked from target 'Challenge', target 'Shelf', it is a static product so may introduce unwanted side effects.
+- **`Target 'CombineSchedulers' has been linked from target 'Challenge', target 'Shelf', it is a static product so may introduce unwanted side effects.`**
     - CombineSchedulers(TCA의 하위 모듈. 즉, Third Party 라이브러리의 모듈임.) 모듈이 각각의 Target에 모두 정적으로 링크되었음을 경고함.
         - 정적으로 여러 모듈에 링크되면 모든 모듈 각각이 Third Party 라이브러리의 코드를 복사하므로 비효율이 발생함.
     - 동적 링크(framework)로 해결
