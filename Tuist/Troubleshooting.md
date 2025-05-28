@@ -178,3 +178,26 @@
         - `PackageSettings`
             - 패키지 통합 방식을 설정할 수 있음.
             - ComposableArchitecture를 framework(동적)로 링킹할 수 있음.
+         
+## 빌드
+
+### 🚨 Errors
+
+- **`Could not build Objective-C module 'WebKit’`**
+    
+    ![image.png](Images/could_not_build_1.png)
+    
+    - 특정 모듈에서 WebKit을 사용하려고 하면 위와 같은 에러가 발생함.
+    - 구글링 해보니 Objective-C 코드가 포함된 의존성은 `Settings`에 `HEADER_SEARCH_PATHS`로 헤더 경로를 명시해서 해결해야 한다고 함.
+        - 하지만 이 방법으로 해결되지 않았다…
+    
+    ### 해결
+    
+    - 기존에 직접 만들어 사용하던 Network라는 모듈이 있었는데 혹시 Apple의 프레임워크인 Network와 충돌이 아닌지 의심
+    - 모듈 이름 변경후 정상동작 함
+    
+    ### 🔍 원인 탐색
+    
+    - WebKit이 Network(시스템 프레임워크)모듈에 의존하고 있음
+    - Tuist로 Network 라는 이름의 모듈 생성
+    - 빌드시 컴파일러가 Network(Tuist) 모듈을 우선 사용하려고 시도 → 🚨 에러 발생
